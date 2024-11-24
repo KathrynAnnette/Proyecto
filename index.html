@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Tienda Online</h1>
+  </header>
+
+  <main>
+    <div class="producto">
+      <img src="images (1).jpg" alt="Ropa de adulto">
+      <h2>Ropa de adulto</h2>
+      <p>Precio: $70</p>
+      <input type="number" id="cantidad-adulto" value="1" min="1">
+      <button class="btn-pastel" onclick="agregarAlCarrito('Ropa de adulto', 70, 'cantidad-adulto')">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen (2).jpg" alt="Ropa de niño">
+      <h2>Ropa de niño</h2>
+      <p>Precio: $50</p>
+      <input type="number" id="cantidad-nino" value="1" min="1">
+      <button class="btn-pastel" onclick="agregarAlCarrito('Ropa de niño', 50, 'cantidad-nino')">Agregar al carrito</button>
+    </div>
+  </main>
+
+  <!-- Botón para abrir el carrito -->
+  <button id="btn-carrito" class="btn-pastel" onclick="abrirCarrito()">♡ Ver Carrito</button>
+
+  <!-- Carrito -->
+  <div id="overlay" onclick="cerrarCarrito()"></div>
+  <div class="cart" id="cart">
+    <h2>Carrito de Compras</h2>
+    <div id="cart-items"></div>
+    <p>Total: $<span id="total-price">0.00</span></p>
+    <button class="btn-pastel" onclick="mostrarFormulario()">Finalizar Compra</button>
+    <button class="btn-pastel" onclick="cerrarCarrito()">Cerrar</button>
+  </div>
+
+  <!-- Formulario de compra -->
+  <div class="form-compra" id="form-compra">
+    <h2>Finalizar Compra</h2>
+    <form id="formulario">
+      <div class="form-group">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" required>
+      </div>
+      <div class="form-group">
+        <label for="direccion">Dirección de envío:</label>
+        <textarea id="direccion" required></textarea>
+      </div>
+      <button type="button" class="btn-pastel" onclick="confirmarCompra()">Completar Pedido</button>
+      <button type="button" class="btn-pastel" onclick="cerrarFormulario()">Cancelar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
